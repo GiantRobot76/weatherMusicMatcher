@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+h1 {
+  font-size: 6rem;
+  color: whitesmoke;
+  text-shadow: 3px 3px #730099;
+}
+
+.grad1 {
+  display: flex;
+  height: 200px;
+  background-color: purple;
+  background-image: linear-gradient(to bottom right, purple, black);
+  justify-content: center;
+  align-items: center;
+}
