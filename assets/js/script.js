@@ -1,1 +1,44 @@
+<<<<<<< HEAD
 var x = 5;
+=======
+//Global Vairable Declarations
+var outputArray = [];
+
+//sample Array for use in formatting. Will delete on completion of project. Just leaving here to use as youTube API output example.
+
+var sampleYouTubeOutput = [
+  {
+    url:
+      "https://m.youtube.com/playlist?list=PLb2aZl2AJg_VpTIQennzYzQVrA_fgRg7-",
+    thumbnail: "https://i.ytimg.com/vi/FEVc6Bw0P3g/default.jpg",
+    title: "Best Classic Reggae Songs",
+  },
+];
+
+// Grabs Playlist Using YouTube API NOTE: VERY LIMITED NUMBER OF USES ALLOWED PER DAY. USE SAVED DATA FOR TESTING
+function getPlaylist(genre) {
+  var requestUrl =
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" +
+    genre +
+    "&type=playlist&key=AIzaSyBMyU-YVS8pasPI3wKV6fiqI1TiPV4RS5g";
+
+  console.log(requestUrl);
+
+  $.ajax({
+    url: requestUrl,
+    method: "GET",
+  }).then(function (response) {
+    var responses = response.items;
+
+    //     // for (let i = 0; i < responses.length; i++) {
+    var keyURL = response.items[0].id.playlistId;
+    var listURL = "https://m.youtube.com/playlist?list=" + keyURL;
+    var thumbURL = response.items[0].snippet.thumbnails.default.url;
+    var listTitle = response.items[0].snippet.title;
+
+    outputArray.push({ url: listURL, thumbnail: thumbURL, title: listTitle });
+    //     // }
+    console.log(outputArray);
+  });
+}
+>>>>>>> main
