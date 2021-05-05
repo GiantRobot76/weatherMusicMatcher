@@ -38,3 +38,34 @@ function getPlaylist(genre) {
     console.log(outputArray);
   });
 }
+
+function getWeather() {
+  //placeholder city for testing. Need to Link to Input field.
+
+  var currentCity = "denver";
+
+  requestUrl =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    currentCity +
+    "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
+  $.ajax({
+    url: requestUrl,
+    method: "GET",
+  }).then(function (response) {
+    if (response.cod == "404") {
+      console.log("city not found");
+      return;
+    }
+    console.log(response);
+
+    //variables used here need to be defined based on html structure. Leaving comments below so can easily link when IDs establised
+    // cityName.text(data.name);
+    // var today = moment().format(" (MM/DD/YYYY)");
+    // currDate.text(today);
+    // localTemperature.text(data.main.temp);
+    // localWind.text(data.wind.speed);
+    // localHumidity.text(data.main.humidity);
+    // cityLat = data.coord.lat;
+    // cityLon = data.coord.lon;
+  });
+}
