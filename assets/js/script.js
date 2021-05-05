@@ -38,3 +38,27 @@ function getPlaylist(genre) {
     console.log(outputArray);
   });
 }
+
+// Weather population
+// Displays temperature
+var temp = response.current.temp;
+$("#temperature").text(temp.toFixed(2) + "°F");
+
+// Displays wind speeds
+var wind = response.current.wind_speed;
+$("#wind").text(wind.toFixed(2) + "MPH");
+
+// Displays humidity
+var humidity = response.current.humidity;
+$("#humidity").text(humidity + " %");
+
+// Displaying date for that day
+var date = $("#date");
+var dateValue = moment().format("M/D/YYYY");
+date.text(dateValue);
+
+// Displays Icon for that day
+iconToday = response.current.weather[0].icon;
+var findIconToday = new Image(50, 50);
+findIconToday.src = "http://openweathermap.org/img/wn/" + iconToday + "@2x.png";
+$("#icon").html(findIconToday);
