@@ -19,3 +19,13 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
+.inputCard {
+  width: 40rem;
+  border: dashed;
+  margin: 3em;
+}
+
+.button-addon1 {
+  font-size: 3em;
+}

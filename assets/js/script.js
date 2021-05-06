@@ -39,7 +39,6 @@ function getPlaylist(genre) {
   });
 }
 
-
 // Weather population
 // Displays temperature
 var temp = response.current.temp;
@@ -63,7 +62,7 @@ iconToday = response.current.weather[0].icon;
 var findIconToday = new Image(50, 50);
 findIconToday.src = "http://openweathermap.org/img/wn/" + iconToday + "@2x.png";
 $("#icon").html(findIconToday);
-=======
+//=======
 function getWeather() {
   //placeholder city for testing. Need to Link to Input field.
 
@@ -94,4 +93,3 @@ function getWeather() {
     // cityLon = data.coord.lon;
   });
 }
-
