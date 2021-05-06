@@ -10,6 +10,7 @@ var wind = $("#wind");
 var humidity = $("#humidity");
 var iconImg = $("#iconIMG");
 var date = $("#date");
+var likeButtons = $(".likeButtons");
 var iconRef;
 
 var currentCity;
@@ -315,6 +316,12 @@ function chooseGenres() {
 }
 
 //event listeners
+
+//replace funciton console log with a populate liked playlist section
+likeButtons.on("click", function () {
+  console.log("test");
+});
+
 cityButton.on("click", function (event) {
   event.preventDefault();
   currentCity = inputCity.val().replace(" ", "+").trim();

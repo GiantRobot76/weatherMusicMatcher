@@ -62,6 +62,7 @@ h2 {
   width: 90%;
   height: 1px;
   border: solid black;
+
 }
 
 .container {
@@ -77,3 +78,5 @@ h2 {
 .spacing {
   margin: 10px 0;
 }
+
+
