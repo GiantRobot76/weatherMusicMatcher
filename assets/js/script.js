@@ -3,6 +3,8 @@ var outputArray = [];
 var cityButton = $("#city-button");
 var inputCity = $("#city-input");
 var cityName = $("#city-name");
+var displayCity = $("#display-city-name");
+var newIconDisplay = $("#new-icon-display");
 var temp = $("#temperature");
 var wind = $("#wind");
 var humidity = $("#humidity");
@@ -62,7 +64,7 @@ function getWeather() {
     }
     console.log(response);
 
-    cityName.text(response.name);
+    displayCity.text(response.name);
 
     temp.text(response.main.temp);
     wind.text(response.wind.speed);
@@ -70,7 +72,7 @@ function getWeather() {
 
     var iconRef = response.weather[0].icon;
     console.log(iconRef);
-    iconImg.attr(
+    newIconDisplay.attr(
       "src",
       "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
     );
