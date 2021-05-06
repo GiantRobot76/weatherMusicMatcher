@@ -26,6 +26,15 @@ h1 {
   margin: 3em;
 }
 
+.weatherPopulate {
+  border: dashed;
+  margin: 1rem;
+}
+
+h2 {
+  font-size: 20px;
+}
+
 .button-addon1 {
   font-size: 3em;
 }
