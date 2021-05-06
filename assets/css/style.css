@@ -45,10 +45,14 @@ h2 {
   text-align: center;
 }
 
+.playlists {
+  display: flex;
+  flex-direction: row;
+}
+
 #savedPlaylists {
   margin: auto;
   margin-top: 20px;
   width: 90%;
   height: 1px;
   border: solid black;
-}
