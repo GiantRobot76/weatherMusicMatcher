@@ -29,33 +29,70 @@
     <header class="grad1">
       <h1>Weather Music Mixer</h1>
     </header>
-    <!-- select your city input -->
-    <div class="inputCard">
-      <div id="inputBox" class="input-group mb-3">
-        <input
-          type="text"
-          class="form-control"
-          placeholder=""
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-        />
-        <button
-          class="btn btn-outline-secondary"
-          type="button"
-          id="button-addon1"
-        >
-          Button
-        </button>
+
+    <div class="container row">
+      <!-- select your city input -->
+
+      <div class="inputCard col-sm-3">
+        <div class="row">
+          <div id="inputBox" class="input-group col-sm-6">
+            <h2>Search for a City</h2>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder=""
+                aria-label="Example text with button addon"
+                aria-describedby="button-addon1"
+              />
+            </div>
+            <button
+              class="btn btn-outline-secondary"
+              type="button"
+              id="button-addon1"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- weather populate -->
+      <div class="weatherPopulate col-sm-8">
+        <div class="row">
+          <div class="col-md-8">
+            <h2>Your City Name Here</h2>
+            <p id="date" style="font-size: medium">
+              <span id="icon"></span>
+              Date Here
+            </p>
+            <div class="row" style="font-size: medium">
+              <div class="col-12">
+                <p>Temp: <span id="temperature"></span></p>
+              </div>
+            </div>
+            <div class="row" style="font-size: medium">
+              <div class="col-12">
+                <p>Winds: <span id="wind"></span></p>
+              </div>
+            </div>
+            <div class="row" style="font-size: medium">
+              <div class="col-12">
+                <p>Humidity: <span id="humidity"></span></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- weather populated  -->
-    <div class="weatherPopulate">
+    <!-- <div class="weatherPopulate col-md-8">
       <p id="date"><span id="icon"></span></p>
       <p>Temp: <span id="temperature"></span></p>
       <p>Winds: <span id="wind"></span></p>
       <p>Humidity: <span id="humidity"></span></p>
-    </div>
+    </div> -->
 
     <!-- genre selector dropdown-->
     <div class="genreSelector"></div>
@@ -63,13 +100,13 @@
     <!-- generated playlists -->
     <section class="container">
       <div>
-        <button></button>
+        <button>❤</button>
       </div>
       <div>
-        <button></button>
+        <button>❤</button>
       </div>
       <div>
-        <button></button>
+        <button>❤</button>
       </div>
     </section>
 
