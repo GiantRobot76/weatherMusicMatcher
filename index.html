@@ -38,23 +38,27 @@
           placeholder=""
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
+          id="city-input"
         />
         <button
           class="btn btn-outline-secondary"
           type="button"
-          id="button-addon1"
+          id="city-button"
         >
-          Button
+          Submit
         </button>
       </div>
     </div>
 
     <!-- weather populated  -->
     <div class="weatherPopulate">
-      <p id="date"><span id="icon"></span></p>
-      <p>Temp: <span id="temperature"></span></p>
-      <p>Winds: <span id="wind"></span></p>
-      <p>Humidity: <span id="humidity"></span></p>
+      <p>City: <span id="city-name"></span></p>
+      <p id="date">
+        <span id="icon"><img id="iconIMG" /></span>
+      </p>
+      <p>Temp: <span id="temperature"></span>° F</p>
+      <p>Winds: <span id="wind"></span> MPH</p>
+      <p>Humidity: <span id="humidity"></span>%</p>
     </div>
 
     <!-- genre selector dropdown-->
