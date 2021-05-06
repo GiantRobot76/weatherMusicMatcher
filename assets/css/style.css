@@ -39,7 +39,20 @@ h2 {
   font-size: 3em;
 }
 
+#savedSection {
+  margin: 100px 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
 .playlists {
   display: flex;
   flex-direction: row;
 }
+
+#savedPlaylists {
+  margin: auto;
+  margin-top: 20px;
+  width: 90%;
+  height: 1px;
+  border: solid black;
