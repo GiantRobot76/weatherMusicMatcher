@@ -62,7 +62,8 @@
       <div class="weatherPopulate col-sm-8">
         <div class="row">
           <div class="col-md-8">
-            <h2>Your City Name Here</h2>
+            <h2 id="display-city-name">Your City Name Here</h2>
+            <img id="new-icon-display" />
             <p id="date" style="font-size: medium">
               <span id="icon"></span>
               Date Here
@@ -87,31 +88,45 @@
       </div>
     </div>
 
-    <!-- weather populated  -->
-    cityInputandWeather
-    <div class="weatherPopulate">
-      <p>City: <span id="city-name"></span></p>
-      <p id="date">
-        <span id="icon"><img id="iconIMG" /></span>
-      </p>
-      <p>Temp: <span id="temperature"></span>° F</p>
-      <p>Winds: <span id="wind"></span> MPH</p>
-      <p>Humidity: <span id="humidity"></span>%</p>
-    </div>
-
     <!-- genre selector dropdown-->
     <div class="genreSelector"></div>
 
     <!-- generated playlists -->
     <section class="container">
-      <div>
-        <button>❤</button>
-      </div>
-      <div>
-        <button>❤</button>
-      </div>
-      <div>
-        <button>❤</button>
+      <div class="playlists">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">Playlist Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Thumbnail or something</p>
+            <a href="#" class="card-link">Playlist link</a>
+          </div>
+        </div>
+        <div>
+          <button>❤</button>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">Playlist Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Thumbnail or something</p>
+            <a href="#" class="card-link">Playlist link</a>
+          </div>
+        </div>
+        <div>
+          <button>❤</button>
+        </div>
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <h5 class="card-title">Playlist Name</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+            <p class="card-text">Thumbnail or something</p>
+            <a href="#" class="card-link">Playlist link</a>
+          </div>
+        </div>
+        <div>
+          <button>❤</button>
+        </div>
       </div>
     </section>
 
