@@ -10,6 +10,7 @@ var wind = $("#wind");
 var humidity = $("#humidity");
 var iconImg = $("#iconIMG");
 var date = $("#date");
+var iconRef;
 
 var currentCity;
 var weatherURL;
@@ -70,33 +71,243 @@ function getWeather() {
     wind.text(response.wind.speed);
     humidity.text(response.main.humidity);
 
-    var iconRef = response.weather[0].icon;
+    iconRef = response.weather[0].icon;
     console.log(iconRef);
     newIconDisplay.attr(
       "src",
       "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
     );
+    chooseGenres();
   });
 }
 
 //random index selection function for genre arrays
 
-function pick3(array) {
-  var numElements = array.length;
+function pick3(inputarray) {
+  var numElements = inputarray.length;
   randNum = Math.floor(Math.random() * numElements);
 
-  var item1 = array[randNum];
-  array = array.splice(randNum, 1);
+  var item1 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
 
-  randNum = Math.floor(Math.random() * numElements - 1);
+  randNum = Math.floor(Math.random() * (numElements - 1));
 
-  var item2 = array[randnum];
-  array = array.splice(randNum, 1);
+  var item2 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
 
-  var item3 = array[randnum];
-  array = array.splice(randNum, 1);
+  randNum = Math.floor(Math.random() * (numElements - 2));
 
-  return item1, item2, item3;
+  var item3 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
+
+  return [item1, item2, item3];
+}
+
+//randomly selects genres from list for each weather type
+function chooseGenres() {
+  //arrays store possible genres for each weather type
+
+  var possibile;
+
+  var genre01d = ["Summer", "Rap", "Modern Rock", "Reggae", "Ranchera", "EDM"];
+  var genre01n = [
+    "R&B",
+    "Underground Hip Hop",
+    "Minor Classical",
+    "Outlaw Country",
+    "Electro Swing",
+    "Party Rock",
+  ];
+  var genre02d = [
+    "Classical",
+    "Pop Punk",
+    "90s Hip Hop",
+    "Country",
+    "Classic Rock",
+    "House",
+  ];
+  var genre02n = [
+    "Jazz",
+    "Ska",
+    "Hair Metal",
+    "Indie Folk",
+    "Renaussance",
+    "Crunk",
+  ];
+  var genre03d = [
+    "Minor Key",
+    "Acoustic Sad",
+    "00s Emo",
+    "Piano Blues",
+    "Dark Ambient",
+    "Trap",
+  ];
+  var genre03n = [
+    "Grunge",
+    "Piano Score",
+    "Rockabilly",
+    "Minimal",
+    "Smooth Jazz",
+    "Glam Rock",
+  ];
+  var genre04d = [
+    "Southern Gothic",
+    "Alternative Rock",
+    "Bluegrass",
+    "Indie Rock",
+    "Mariachi",
+    "Goth Metal",
+  ];
+  var genre04n = [
+    "Trip-hop",
+    "Southern Gothic",
+    "New Wave",
+    "Ambient House",
+    "Post Rock",
+    "Sludge Metal",
+  ];
+  var genre09d = [
+    "Acid Rock",
+    "Glitch",
+    "Celtic Folk",
+    "Punk",
+    "Symphonic",
+    "Ragtime Blues",
+  ];
+  var genre09n = [
+    "Trance",
+    "Djent",
+    "Ambient Piano",
+    "Viking Metal",
+    "Motown",
+    "Psychedelic",
+  ];
+  var genre10d = [
+    "Math Rock",
+    "Lofi",
+    "Show Tunes",
+    "Doom Metal",
+    "Blues",
+    "Chamber Music",
+  ];
+  var genre10n = [
+    "Nu Metal",
+    "Hardcore",
+    "Opera",
+    "Nintendocore",
+    "Deep House",
+    "Acid Jazz",
+  ];
+  var genre11d = [
+    "Epic Classical",
+    "Speed Metal",
+    "Industrial",
+    "Brostep",
+    "Electro House",
+    "British Invasion",
+  ];
+  var genre11n = [
+    "Orchestral",
+    "Metalcore",
+    "Dubstep",
+    "Techno",
+    "Jazz Fusion",
+    "Symphonic Black Metal",
+  ];
+  var genre13d = [
+    "Holiday",
+    "Disney",
+    "Drum and Bass",
+    "K-Pop",
+    "New Wave",
+    "West Coast Rap",
+  ];
+  var genre13n = [
+    "Black Metal",
+    "Minor Dubstep",
+    "J-Pop",
+    "Hard Rock",
+    "Synthwave",
+    "East Coast Rap",
+  ];
+  var genre50d = [
+    "Deep House",
+    "Dark Orchestral",
+    "Horror",
+    "Death Metal",
+    "Polka",
+    "Europop",
+  ];
+  var genre50n = [
+    "Rap Rock",
+    "Symphonic Metal",
+    "Acid House",
+    "Dream Funk",
+    "Contemporary Country",
+    "Synthpop",
+  ];
+
+  switch (iconRef) {
+    case "01d":
+      possible = genre01d;
+      break;
+    case "02d":
+      possible = genre02d;
+      break;
+    case "03d":
+      possible = genre03d;
+      break;
+    case "04d":
+      possible = genre04d;
+      break;
+    case "09d":
+      possible = genre09d;
+      break;
+    case "10d":
+      possible = genre10d;
+      break;
+    case "11d":
+      possible = genre11d;
+      break;
+    case "13d":
+      possible = genre13d;
+      break;
+    case "50d":
+      possible = genre50d;
+      break;
+    case "01n":
+      possible = genre01n;
+      break;
+    case "02n":
+      possible = genre02n;
+      break;
+    case "03n":
+      possible = genre03n;
+      break;
+    case "04n":
+      possible = genre04n;
+      break;
+    case "09n":
+      possible = genre09n;
+      break;
+    case "10n":
+      possible = genre10n;
+      break;
+    case "11n":
+      possible = genre11n;
+      break;
+    case "13n":
+      possible = genre13n;
+      break;
+    case "50n":
+      possible = genre50n;
+      break;
+    default:
+      possible = genre01d;
+      break;
+  }
+  var finalGenres = pick3(possible);
+  console.log(finalGenres);
 }
 
 //event listeners
