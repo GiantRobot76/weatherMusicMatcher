@@ -107,24 +107,143 @@ function chooseGenres() {
 
   var possibile;
 
-  var genre01d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre01n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre02d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre02n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre03d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre03n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre04d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre04n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre09d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre09dn = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre10d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre10n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre11d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre11n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre13d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre13n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre50d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
-  var genre050n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre01d = ["Summer", "Rap", "Modern Rock", "Reggae", "Ranchera", "EDM"];
+  var genre01n = [
+    "R&B",
+    "Underground Hip Hop",
+    "Minor Classical",
+    "Outlaw Country",
+    "Electro Swing",
+    "Party Rock",
+  ];
+  var genre02d = [
+    "Classical",
+    "Pop Punk",
+    "90s Hip Hop",
+    "Country",
+    "Classic Rock",
+    "House",
+  ];
+  var genre02n = [
+    "Jazz",
+    "Ska",
+    "Hair Metal",
+    "Indie Folk",
+    "Renaussance",
+    "Crunk",
+  ];
+  var genre03d = [
+    "Minor Key",
+    "Acoustic Sad",
+    "00s Emo",
+    "Piano Blues",
+    "Dark Ambient",
+    "Trap",
+  ];
+  var genre03n = [
+    "Grunge",
+    "Piano Score",
+    "Rockabilly",
+    "Minimal",
+    "Smooth Jazz",
+    "Glam Rock",
+  ];
+  var genre04d = [
+    "Southern Gothic",
+    "Alternative Rock",
+    "Bluegrass",
+    "Indie Rock",
+    "Mariachi",
+    "Goth Metal",
+  ];
+  var genre04n = [
+    "Trip-hop",
+    "Southern Gothic",
+    "New Wave",
+    "Ambient House",
+    "Post Rock",
+    "Sludge Metal",
+  ];
+  var genre09d = [
+    "Acid Rock",
+    "Glitch",
+    "Celtic Folk",
+    "Punk",
+    "Symphonic",
+    "Ragtime Blues",
+  ];
+  var genre09n = [
+    "Trance",
+    "Djent",
+    "Ambient Piano",
+    "Viking Metal",
+    "Motown",
+    "Psychedelic",
+  ];
+  var genre10d = [
+    "Math Rock",
+    "Lofi",
+    "Show Tunes",
+    "Doom Metal",
+    "Blues",
+    "Chamber Music",
+  ];
+  var genre10n = [
+    "Nu Metal",
+    "Hardcore",
+    "Opera",
+    "Nintendocore",
+    "Deep House",
+    "Acid Jazz",
+  ];
+  var genre11d = [
+    "Epic Classical",
+    "Speed Metal",
+    "Industrial",
+    "Brostep",
+    "Electro House",
+    "British Invasion",
+  ];
+  var genre11n = [
+    "Orchestral",
+    "Metalcore",
+    "Dubstep",
+    "Techno",
+    "Jazz Fusion",
+    "Symphonic Black Metal",
+  ];
+  var genre13d = [
+    "Holiday",
+    "Disney",
+    "Drum and Bass",
+    "K-Pop",
+    "New Wave",
+    "West Coast Rap",
+  ];
+  var genre13n = [
+    "Black Metal",
+    "Minor Dubstep",
+    "J-Pop",
+    "Hard Rock",
+    "Synthwave",
+    "East Coast Rap",
+  ];
+  var genre50d = [
+    "Deep House",
+    "Dark Orchestral",
+    "Horror",
+    "Death Metal",
+    "Polka",
+    "Europop",
+  ];
+  var genre50n = [
+    "Rap Rock",
+    "Symphonic Metal",
+    "Acid House",
+    "Dream Funk",
+    "Contemporary Country",
+    "Synthpop",
+  ];
 
   switch (iconRef) {
     case "01d":
@@ -151,6 +270,9 @@ function chooseGenres() {
     case "13d":
       possible = genre13d;
       break;
+    case "50d":
+      possible = genre50d;
+      break;
     case "01n":
       possible = genre01n;
       break;
@@ -174,6 +296,9 @@ function chooseGenres() {
       break;
     case "13n":
       possible = genre13n;
+      break;
+    case "50n":
+      possible = genre50n;
       break;
     default:
       possible = genre01d;
