@@ -1,10 +1,17 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
   font-size: 62.5%;
 }
+
+body {
+  background-image: url("../images/background.png");
+}
+
 h1 {
   font-size: 6rem;
   color: whitesmoke;
@@ -27,8 +34,7 @@ h1 {
 }
 
 .weatherPopulate {
-  border: dashed;
-  margin: 1rem;
+  margin-bottom: 100px;
 }
 
 h2 {
@@ -56,3 +62,18 @@ h2 {
   width: 90%;
   height: 1px;
   border: solid black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+#display-city-name {
+  margin-top: 10px;
+}
+
+.spacing {
+  margin: 10px 0;
+}

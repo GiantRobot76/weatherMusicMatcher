@@ -17,7 +17,7 @@ var weatherURL;
 
 // Display the current date
 var currentDate = moment().format("dddd, MMMM Do YYYY");
-date.text(currentDate);
+date.text(currentDate).css("font-weight", "bold");
 
 //sample Array for use in formatting. Will delete on completion of project. Just leaving here to use as youTube API output example.
 
@@ -71,9 +71,9 @@ function getWeather() {
 
     displayCity.text(response.name);
 
-    temp.text(response.main.temp);
-    wind.text(response.wind.speed);
-    humidity.text(response.main.humidity);
+    temp.text(response.main.temp + " °F");
+    wind.text(response.wind.speed + "MPH");
+    humidity.text(response.main.humidity) + "%";
 
     iconRef = response.weather[0].icon;
     console.log(iconRef);
