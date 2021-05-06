@@ -38,3 +38,8 @@ h2 {
 .button-addon1 {
   font-size: 3em;
 }
+
+.playlists {
+  display: flex;
+  flex-direction: row;
+}
