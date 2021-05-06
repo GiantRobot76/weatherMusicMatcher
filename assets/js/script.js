@@ -77,6 +77,26 @@ function getWeather() {
   });
 }
 
+//random index selection function for genre arrays
+
+function pick3(array) {
+  var numElements = array.length;
+  randNum = Math.floor(Math.random() * numElements);
+
+  var item1 = array[randNum];
+  array = array.splice(randNum, 1);
+
+  randNum = Math.floor(Math.random() * numElements - 1);
+
+  var item2 = array[randnum];
+  array = array.splice(randNum, 1);
+
+  var item3 = array[randnum];
+  array = array.splice(randNum, 1);
+
+  return item1, item2, item3;
+}
+
 //event listeners
 cityButton.on("click", function (event) {
   event.preventDefault();
