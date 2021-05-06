@@ -79,22 +79,24 @@ function getWeather() {
 
 //random index selection function for genre arrays
 
-function pick3(array) {
-  var numElements = array.length;
+function pick3(inputarray) {
+  var numElements = inputarray.length;
   randNum = Math.floor(Math.random() * numElements);
 
-  var item1 = array[randNum];
-  array = array.splice(randNum, 1);
+  var item1 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
 
-  randNum = Math.floor(Math.random() * numElements - 1);
+  randNum = Math.floor(Math.random() * (numElements - 1));
 
-  var item2 = array[randnum];
-  array = array.splice(randNum, 1);
+  var item2 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
 
-  var item3 = array[randnum];
-  array = array.splice(randNum, 1);
+  randNum = Math.floor(Math.random() * (numElements - 2));
 
-  return item1, item2, item3;
+  var item3 = inputarray[randNum];
+  array = inputarray.splice(randNum, 1);
+
+  return [item1, item2, item3];
 }
 
 //event listeners
@@ -111,3 +113,6 @@ cityButton.on("click", function (event) {
     "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
   getWeather();
 });
+
+var test = pick3([0, 1, 2, 3, 4, 5]);
+console.log(test);
