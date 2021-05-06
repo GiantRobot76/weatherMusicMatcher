@@ -15,6 +15,10 @@ var iconRef;
 var currentCity;
 var weatherURL;
 
+// Display the current date
+var currentDate = moment().format("dddd, MMMM Do YYYY");
+date.text(currentDate);
+
 //sample Array for use in formatting. Will delete on completion of project. Just leaving here to use as youTube API output example.
 
 var sampleYouTubeOutput = [
