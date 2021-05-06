@@ -1,5 +1,16 @@
 //Global Vairable Declarations
 var outputArray = [];
+var cityButton = $("#city-button");
+var inputCity = $("#city-input");
+var cityName = $("#city-name");
+var temp = $("#temperature");
+var wind = $("#wind");
+var humidity = $("#humidity");
+var iconImg = $("#iconIMG");
+var date = $("#date");
+
+var currentCity;
+var weatherURL;
 
 //sample Array for use in formatting. Will delete on completion of project. Just leaving here to use as youTube API output example.
 
@@ -39,41 +50,10 @@ function getPlaylist(genre) {
   });
 }
 
-// Weather population
-// Displays temperature
-var temp = response.current.temp;
-$("#temperature").text(temp.toFixed(2) + "°F");
-
-// Displays wind speeds
-var wind = response.current.wind_speed;
-$("#wind").text(wind.toFixed(2) + "MPH");
-
-// Displays humidity
-var humidity = response.current.humidity;
-$("#humidity").text(humidity + " %");
-
-// Displaying date for that day
-var date = $("#date");
-var dateValue = moment().format("M/D/YYYY");
-date.text(dateValue);
-
-// Displays Icon for that day
-iconToday = response.current.weather[0].icon;
-var findIconToday = new Image(50, 50);
-findIconToday.src = "http://openweathermap.org/img/wn/" + iconToday + "@2x.png";
-$("#icon").html(findIconToday);
-//=======
+//Retrieves and Displays Weather Data Based on Input City - IconRef will be Used to Choose Playlist
 function getWeather() {
-  //placeholder city for testing. Need to Link to Input field.
-
-  var currentCity = "denver";
-
-  requestUrl =
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-    currentCity +
-    "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
   $.ajax({
-    url: requestUrl,
+    url: weatherURL,
     method: "GET",
   }).then(function (response) {
     if (response.cod == "404") {
@@ -82,14 +62,32 @@ function getWeather() {
     }
     console.log(response);
 
-    //variables used here need to be defined based on html structure. Leaving comments below so can easily link when IDs establised
-    // cityName.text(data.name);
-    // var today = moment().format(" (MM/DD/YYYY)");
-    // currDate.text(today);
-    // localTemperature.text(data.main.temp);
-    // localWind.text(data.wind.speed);
-    // localHumidity.text(data.main.humidity);
-    // cityLat = data.coord.lat;
-    // cityLon = data.coord.lon;
+    cityName.text(response.name);
+
+    temp.text(response.main.temp);
+    wind.text(response.wind.speed);
+    humidity.text(response.main.humidity);
+
+    var iconRef = response.weather[0].icon;
+    console.log(iconRef);
+    iconImg.attr(
+      "src",
+      "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
+    );
   });
 }
+
+//event listeners
+cityButton.on("click", function (event) {
+  event.preventDefault();
+  currentCity = inputCity.val().replace(" ", "+").trim();
+
+  //keep original format for 2 name cities for display
+  var formatCity = currentCity.replace("+", " ");
+
+  weatherURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    currentCity +
+    "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
+  getWeather();
+});

@@ -35,7 +35,7 @@
 
       <div class="inputCard col-sm-3">
         <div class="row">
-          <div id="inputBox" class="input-group col-sm-6">
+          <div id="inputBox" class="input-group col-sm-6 mb-3">
             <h2>Search for a City</h2>
             <div class="input-group mb-3">
               <input
@@ -43,7 +43,7 @@
                 class="form-control"
                 placeholder=""
                 aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
+                aria-describedby="button-addon1" id="city-input"
               />
             </div>
             <button
@@ -83,16 +83,23 @@
             </div>
           </div>
         </div>
+
       </div>
     </div>
 
     <!-- weather populated  -->
-    <!-- <div class="weatherPopulate col-md-8">
-      <p id="date"><span id="icon"></span></p>
-      <p>Temp: <span id="temperature"></span></p>
-      <p>Winds: <span id="wind"></span></p>
-      <p>Humidity: <span id="humidity"></span></p>
-    </div> -->
+ cityInputandWeather
+    <div class="weatherPopulate">
+      <p>City: <span id="city-name"></span></p>
+      <p id="date">
+        <span id="icon"><img id="iconIMG" /></span>
+      </p>
+      <p>Temp: <span id="temperature"></span>° F</p>
+      <p>Winds: <span id="wind"></span> MPH</p>
+      <p>Humidity: <span id="humidity"></span>%</p>
+    </div>
+
+
 
     <!-- genre selector dropdown-->
     <div class="genreSelector"></div>
