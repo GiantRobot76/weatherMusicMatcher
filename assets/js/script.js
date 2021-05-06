@@ -93,3 +93,20 @@ function getWeather() {
     // cityLon = data.coord.lon;
   });
 }
+
+// Favorite playlist code
+// Grabbing the each section with playlist link and image
+var likedPlayList1 = $("#likedPlay1");
+var likedPlayList2 = $("#likedPlay2");
+var likedPlayList3 = $("#likedPlay3");
+
+// Watching for a click on each like button and adding liked playlist to the ul
+$("#like1").on("click", function () {
+  $("#favList").append(likedPlayList1);
+});
+$("#like2").on("click", function () {
+  $("#favList").append(likedPlayList2);
+});
+$("#like3").on("click", function () {
+  $("#favList").append(likedPlayList3);
+});
