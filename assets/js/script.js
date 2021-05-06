@@ -8,6 +8,7 @@ var wind = $("#wind");
 var humidity = $("#humidity");
 var iconImg = $("#iconIMG");
 var date = $("#date");
+var iconRef;
 
 var currentCity;
 var weatherURL;
@@ -68,12 +69,13 @@ function getWeather() {
     wind.text(response.wind.speed);
     humidity.text(response.main.humidity);
 
-    var iconRef = response.weather[0].icon;
+    iconRef = response.weather[0].icon;
     console.log(iconRef);
     iconImg.attr(
       "src",
       "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
     );
+    chooseGenres();
   });
 }
 
@@ -99,6 +101,88 @@ function pick3(inputarray) {
   return [item1, item2, item3];
 }
 
+//randomly selects genres from list for each weather type
+function chooseGenres() {
+  //arrays store possible genres for each weather type
+
+  var possibile;
+
+  var genre01d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre01n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre02d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre02n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre03d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre03n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre04d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre04n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre09d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre09dn = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre10d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre10n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre11d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre11n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre13d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre13n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre50d = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+  var genre050n = ["Metal", "Rap", "Reggae", "K-Pop", "Afrobeat", "Soul"];
+
+  switch (iconRef) {
+    case "01d":
+      possible = genre01d;
+      break;
+    case "02d":
+      possible = genre02d;
+      break;
+    case "03d":
+      possible = genre03d;
+      break;
+    case "04d":
+      possible = genre04d;
+      break;
+    case "09d":
+      possible = genre09d;
+      break;
+    case "10d":
+      possible = genre10d;
+      break;
+    case "11d":
+      possible = genre11d;
+      break;
+    case "13d":
+      possible = genre13d;
+      break;
+    case "01n":
+      possible = genre01n;
+      break;
+    case "02n":
+      possible = genre02n;
+      break;
+    case "03n":
+      possible = genre03n;
+      break;
+    case "04n":
+      possible = genre04n;
+      break;
+    case "09n":
+      possible = genre09n;
+      break;
+    case "10n":
+      possible = genre10n;
+      break;
+    case "11n":
+      possible = genre11n;
+      break;
+    case "13n":
+      possible = genre13n;
+      break;
+    default:
+      possible = genre01d;
+      break;
+  }
+  var finalGenres = pick3(possible);
+  console.log(finalGenres);
+}
+
 //event listeners
 cityButton.on("click", function (event) {
   event.preventDefault();
@@ -113,6 +197,3 @@ cityButton.on("click", function (event) {
     "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
   getWeather();
 });
-
-var test = pick3([0, 1, 2, 3, 4, 5]);
-console.log(test);
