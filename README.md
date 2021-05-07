@@ -17,6 +17,6 @@ THEN the liked playlist is added to a favorites list and the data persists
 ## Deployed Site
 
 Here is an image of the website:
-![An image of the work day planner page](assets/images/)
+![An image of the work day planner page](assets/images/Weather_Music_Matcher-1.png)
 
 Link to deployed site: https://aarondmendoza.github.io/weatherMusicMatcher/
