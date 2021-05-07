@@ -119,3 +119,16 @@ h2 {
   color: darkblue;
   font-size: 1.25rem;
 }
+
+ul a {
+  display: block;
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+  font-size: larger;
+}
+
+ul a:hover {
+  font-size: x-large;
+  text-decoration: none;
+}
