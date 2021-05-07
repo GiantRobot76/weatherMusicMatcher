@@ -16,6 +16,8 @@ var like2 = $("#button2");
 var like3 = $("#button3");
 var savedBox = $("#saved-play-lists");
 var saveTarget = $("#saved-list-target");
+var dispWin = $(".playlists");
+var weathDisp = $(".weatherPopulate");
 
 //playlist card locations
 var pl1Title = $("#PL1-Title");
@@ -421,6 +423,8 @@ cityButton.on("click", function (event) {
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     currentCity +
     "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
+  dispWin.attr("style", "display:flex");
+  weathDisp.attr("style", "display:block");
   getWeather();
 });
 
