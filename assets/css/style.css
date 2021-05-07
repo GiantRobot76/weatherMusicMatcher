@@ -110,4 +110,12 @@ h2 {
 
 .card {
   margin: 1rem;
+  border-radius: 10px;
+  background-color: skyblue;
+}
+
+.card-link:hover {
+  cursor: pointer;
+  color: darkblue;
+  font-size: 1.25rem;
 }
