@@ -69,7 +69,7 @@ function getPlaylist(genre, keyValue) {
   var requestUrl =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
     genre +
-    "&type=playlist&key=AIzaSyBMyU-YVS8pasPI3wKV6fiqI1TiPV4RS5g";
+    "&type=playlist&key=AIzaSyAQ-HzAgFyzREnif3Z0QoiTiQ64-iqM-Dk";
 
   $.ajax({
     url: requestUrl,
