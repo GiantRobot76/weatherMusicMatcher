@@ -11,6 +11,11 @@ var humidity = $("#humidity");
 var iconImg = $("#iconIMG");
 var date = $("#date");
 var likeButtons = $(".likeButtons");
+var like1 = $("#button1");
+var like2 = $("#button2");
+var like3 = $("#button3");
+var savedBox = $("#saved-play-lists");
+var saveTarget = $("#saved-list-target");
 
 //playlist card locations
 var pl1Title = $("#PL1-Title");
@@ -30,6 +35,10 @@ var iconRef;
 var currentCity;
 var weatherURL;
 
+//Saved playlist for persistent storage
+var savedPlaylists = JSON.parse(localStorage.getItem("savedPlay")) || [];
+var currentPlayListNum;
+
 // Display the current date
 var currentDate = moment().format("dddd, MMMM Do YYYY");
 date.text(currentDate).css("font-weight", "bold");
@@ -45,14 +54,22 @@ var sampleYouTubeOutput = [
   },
 ];
 
+function renderSavedLists() {
+  for (let i = 0; i < savedPlaylists.length; i++) {
+    var newAnchor = $("<a>");
+
+    newAnchor.attr("href", savedPlaylists[i].playlistURL);
+    newAnchor.text(savedPlaylists[i].playlistTitle);
+    saveTarget.append(newAnchor);
+  }
+}
+
 // Grabs Playlist Using YouTube API NOTE: VERY LIMITED NUMBER OF USES ALLOWED PER DAY. USE SAVED DATA FOR TESTING
 function getPlaylist(genre, keyValue) {
   var requestUrl =
     "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
     genre +
     "&type=playlist&key=AIzaSyBMyU-YVS8pasPI3wKV6fiqI1TiPV4RS5g";
-
-  console.log(requestUrl);
 
   $.ajax({
     url: requestUrl,
@@ -94,7 +111,6 @@ function getWeather() {
       console.log("city not found");
       return;
     }
-    console.log(response);
 
     displayCity.text(response.name);
 
@@ -103,7 +119,7 @@ function getWeather() {
     humidity.text(response.main.humidity) + "%";
 
     iconRef = response.weather[0].icon;
-    console.log(iconRef);
+
     newIconDisplay.attr(
       "src",
       "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
@@ -347,8 +363,50 @@ function chooseGenres() {
 //event listeners
 
 //replace funciton console log with a populate liked playlist section
-likeButtons.on("click", function () {
-  console.log("test");
+like1.on("click", function () {
+  if (currentPlayListNum) {
+    currentPlayListNum++;
+  } else currentPlayListNum = 0;
+
+  savedPlaylists.push({
+    playlistURL: link1.attr("href"),
+    playlistTitle: pl1Title.text(),
+  });
+  console.log("push1");
+  console.log(currentPlayListNum);
+  console.log(link1.attr("href"));
+  console.log(pl1Title.text());
+  localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
+});
+like2.on("click", function () {
+  if (currentPlayListNum) {
+    currentPlayListNum++;
+  } else currentPlayListNum = 0;
+
+  savedPlaylists.push({
+    playlistURL: link2.attr("href"),
+    playlistTitle: pl2Title.text(),
+  });
+  console.log(currentPlayListNum);
+  console.log(link2.attr("href"));
+  console.log(pl2Title.text());
+  localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
+  console.log("push2");
+});
+like3.on("click", function () {
+  if (currentPlayListNum) {
+    currentPlayListNum++;
+  } else currentPlayListNum = 0;
+
+  savedPlaylists.push({
+    playlistURL: link3.attr("href"),
+    playlistTitle: pl3Title.text(),
+  });
+  console.log(currentPlayListNum);
+  console.log(link3.attr("href"));
+  console.log(pl3Title.text());
+  console.log("push3");
+  localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
 });
 
 cityButton.on("click", function (event) {
@@ -364,3 +422,5 @@ cityButton.on("click", function (event) {
     "&units=imperial&appid=255055a794435e93d10c1986c06d9c9b";
   getWeather();
 });
+
+renderSavedLists();
