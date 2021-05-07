@@ -40,6 +40,7 @@ h1 {
 }
 
 .weatherPopulate {
+  display: none;
   margin-bottom: 100px;
 }
 
