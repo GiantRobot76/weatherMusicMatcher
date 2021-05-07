@@ -10,6 +10,8 @@ html {
 
 body {
   background-image: url("../images/background.png");
+  font-family: "Expletus Sans", cursive;
+  font-style: bold;
 }
 
 h1 {
@@ -29,8 +31,12 @@ h1 {
 
 .inputCard {
   width: 40rem;
-  border: dashed;
   margin: 3em;
+}
+
+.input-group {
+  margin: auto;
+  padding: 10px;
 }
 
 .weatherPopulate {
@@ -62,7 +68,6 @@ h2 {
   width: 90%;
   height: 1px;
   border: solid black;
-
 }
 
 .container {
@@ -79,4 +84,30 @@ h2 {
   margin: 10px 0;
 }
 
+#city-button {
+  background-color: rgb(2, 14, 83);
+  color: white;
+  border: transparent;
+  width: 30%;
+}
 
+#city-button:hover {
+  background-color: rgb(16, 19, 233);
+}
+
+.likeButtons {
+  background-color: transparent;
+  border: transparent;
+  width: 20px;
+  height: 20px;
+  font-size: large;
+  color: red;
+}
+
+.likeButtons:hover {
+  font-size: x-large;
+}
+
+.card {
+  margin: 1rem;
+}
