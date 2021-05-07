@@ -40,6 +40,7 @@ h1 {
 }
 
 .weatherPopulate {
+  margin-top: 50px;
   margin-bottom: 100px;
 }
 
@@ -70,11 +71,11 @@ h2 {
   border: solid black;
 }
 
-.container {
+/* .container {
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
-}
+} */
 
 #display-city-name {
   margin-top: 10px;
