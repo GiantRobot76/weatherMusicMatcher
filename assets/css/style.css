@@ -40,7 +40,10 @@ h1 {
 }
 
 .weatherPopulate {
+
   margin-top: 50px;
+
+  display: none;
   margin-bottom: 100px;
 }
 
@@ -59,7 +62,7 @@ h2 {
 }
 
 .playlists {
-  display: flex;
+  display: none;
   flex-direction: row;
 }
 
