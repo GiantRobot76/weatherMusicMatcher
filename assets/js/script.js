@@ -11,6 +11,20 @@ var humidity = $("#humidity");
 var iconImg = $("#iconIMG");
 var date = $("#date");
 var likeButtons = $(".likeButtons");
+
+//playlist card locations
+var pl1Title = $("#PL1-Title");
+var thumb1 = $("#thumbnail1");
+var link1 = $("#link1");
+
+var pl2Title = $("#PL2-Title");
+var thumb2 = $("#thumbnail2");
+var link2 = $("#link2");
+
+var pl3Title = $("#PL3-Title");
+var thumb3 = $("#thumbnail3");
+var link3 = $("#link3");
+
 var iconRef;
 
 var currentCity;
@@ -32,9 +46,9 @@ var sampleYouTubeOutput = [
 ];
 
 // Grabs Playlist Using YouTube API NOTE: VERY LIMITED NUMBER OF USES ALLOWED PER DAY. USE SAVED DATA FOR TESTING
-function getPlaylist(genre) {
+function getPlaylist(genre, keyValue) {
   var requestUrl =
-    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=" +
+    "https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=" +
     genre +
     "&type=playlist&key=AIzaSyBMyU-YVS8pasPI3wKV6fiqI1TiPV4RS5g";
 
@@ -51,10 +65,22 @@ function getPlaylist(genre) {
     var listURL = "https://m.youtube.com/playlist?list=" + keyURL;
     var thumbURL = response.items[0].snippet.thumbnails.default.url;
     var listTitle = response.items[0].snippet.title;
-
-    outputArray.push({ url: listURL, thumbnail: thumbURL, title: listTitle });
     //     // }
-    console.log(outputArray);
+
+    //populate appropriate column with API Results
+    if (keyValue === 1) {
+      pl1Title.text(listTitle);
+      thumb1.attr("src", thumbURL);
+      link1.attr("href", listURL);
+    } else if (keyValue === 2) {
+      pl2Title.text(listTitle);
+      thumb2.attr("src", thumbURL);
+      link2.attr("href", listURL);
+    } else {
+      pl3Title.text(listTitle);
+      thumb3.attr("src", thumbURL);
+      link3.attr("href", listURL);
+    }
   });
 }
 
@@ -312,7 +338,10 @@ function chooseGenres() {
       break;
   }
   var finalGenres = pick3(possible);
-  console.log(finalGenres);
+
+  getPlaylist(finalGenres[0], 1);
+  getPlaylist(finalGenres[1], 2);
+  getPlaylist(finalGenres[2], 3);
 }
 
 //event listeners
