@@ -354,6 +354,7 @@ function chooseGenres() {
       break;
   }
   var finalGenres = pick3(possible);
+  console.log(finalGenres);
 
   getPlaylist(finalGenres[0], 1);
   getPlaylist(finalGenres[1], 2);
