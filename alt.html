@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Music Matcher</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
+    ></script>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4 text-center">Weather Music Matcher</h1>
+      <p class="lead text-center">
+        Customized Playlist Recommendations Based on Your Local Weather
+      </p>
+    </div>
+
+    <div class="row ml-3">
+      <div class="col-sm-3 text-center border border-black">
+        <h2>Enter Your City</h2>
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="city-input"
+              aria-describedby="cityInput"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="city-input">
+            Search
+          </button>
+        </form>
+      </div>
+
+      <div class="col-sm-8 text-center border border-black ml-3">
+        <h2>City Name<span id="icon"></span></h2>
+        <p class="text-left">Temperature:<span id="temperature"></span></p>
+        <p class="text-left">Wind:<span id="wind"> MPH</span></p>
+        <p class="text-left">Humidity:<span id="temperature"> %</span></p>
+      </div>
+    </div>
+
+    <div class="row ml-3 mt-3 flex-row justify-content-center">
+      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+        <h3>Genre Title</h3>
+        <div class="wrap border border-black">
+          <p>Playlist Title Goes Here</p>
+          <p>Image Goes Here</p>
+          <p><a href="#"></a>URL Goes Here</p>
+        </div>
+        <div>
+          Save This Playlist
+          <button id="button1" class="likeButtons">👍</button>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+        <h3>Genre Title</h3>
+        <div class="wrap border border-black">
+          <p>Playlist Title Goes Here</p>
+          <p>Image Goes Here</p>
+          <p><a href="#"></a>URL Goes Here</p>
+        </div>
+        <div>
+          Save This Playlist
+          <button id="button2" class="likeButtons">👍</button>
+        </div>
+      </div>
+      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+        <h3>Genre Title</h3>
+        <div class="wrap border border-black">
+          <p>Playlist Title Goes Here</p>
+          <p>Image Goes Here</p>
+          <p><a href="#"></a>URL Goes Here</p>
+        </div>
+        <div>
+          Save This Playlist
+          <button id="button3" class="likeButtons">👍</button>
+        </div>
+      </div>
+    </div>
+    <div class="row ml-3 mt-3 flex-row justify-content-center">
+      <ul class="text-center mt-3">
+        Saved Playlists Go Here
+        <li>Playlist1</li>
+        <li>Playlist2</li>
+        <li>Playlist3</li>
+        <li>Playlist4</li>
+      </ul>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
