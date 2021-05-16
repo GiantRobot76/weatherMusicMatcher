@@ -23,14 +23,17 @@ var weathDisp = $(".weatherPopulate");
 var pl1Title = $("#PL1-Title");
 var thumb1 = $("#thumbnail1");
 var link1 = $("#link1");
+var genre1 = $("#genre-title-1");
 
 var pl2Title = $("#PL2-Title");
 var thumb2 = $("#thumbnail2");
 var link2 = $("#link2");
+var genre2 = $("#genre-title-2");
 
 var pl3Title = $("#PL3-Title");
 var thumb3 = $("#thumbnail3");
 var link3 = $("#link3");
+var genre3 = $("#genre-title-3");
 
 var iconRef;
 
@@ -49,8 +52,7 @@ date.text(currentDate).css("font-weight", "bold");
 
 var sampleYouTubeOutput = [
   {
-    url:
-      "https://m.youtube.com/playlist?list=PLb2aZl2AJg_VpTIQennzYzQVrA_fgRg7-",
+    url: "https://m.youtube.com/playlist?list=PLb2aZl2AJg_VpTIQennzYzQVrA_fgRg7-",
     thumbnail: "https://i.ytimg.com/vi/FEVc6Bw0P3g/default.jpg",
     title: "Best Classic Reggae Songs",
   },
@@ -91,14 +93,17 @@ function getPlaylist(genre, keyValue) {
       pl1Title.text(listTitle);
       thumb1.attr("src", thumbURL);
       link1.attr("href", listURL);
+      genre1.text(genre);
     } else if (keyValue === 2) {
       pl2Title.text(listTitle);
       thumb2.attr("src", thumbURL);
       link2.attr("href", listURL);
+      genre2.text(genre);
     } else {
       pl3Title.text(listTitle);
       thumb3.attr("src", thumbURL);
       link3.attr("href", listURL);
+      genre3.text(genre);
     }
   });
 }
@@ -117,8 +122,8 @@ function getWeather() {
     displayCity.text(response.name);
 
     temp.text(response.main.temp + " °F");
-    wind.text(response.wind.speed + "MPH");
-    humidity.text(response.main.humidity) + "%";
+    wind.text(response.wind.speed + " MPH");
+    humidity.text(response.main.humidity + "%");
 
     iconRef = response.weather[0].icon;
 
