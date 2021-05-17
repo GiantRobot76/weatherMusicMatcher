@@ -24,16 +24,19 @@ var pl1Title = $("#PL1-Title");
 var thumb1 = $("#thumbnail1");
 var link1 = $("#link1");
 var genre1 = $("#genre-title-1");
+var fbck1 = $("#feedback1");
 
 var pl2Title = $("#PL2-Title");
 var thumb2 = $("#thumbnail2");
 var link2 = $("#link2");
 var genre2 = $("#genre-title-2");
+var fbck2 = $("#feedback2");
 
 var pl3Title = $("#PL3-Title");
 var thumb3 = $("#thumbnail3");
 var link3 = $("#link3");
 var genre3 = $("#genre-title-3");
+var fbck3 = $("#feedback3");
 
 var iconRef;
 
@@ -131,6 +134,7 @@ function getWeather() {
       "src",
       "https://openweathermap.org/img/wn/" + iconRef + "@2x.png"
     );
+    console.log(newIconDisplay.attr("src"));
     chooseGenres();
   });
 }
@@ -380,11 +384,9 @@ like1.on("click", function () {
     playlistURL: link1.attr("href"),
     playlistTitle: pl1Title.text(),
   });
-  console.log("push1");
-  console.log(currentPlayListNum);
-  console.log(link1.attr("href"));
-  console.log(pl1Title.text());
+
   localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
+  fbck1.text("Playlist Saved!");
 });
 like2.on("click", function () {
   if (currentPlayListNum) {
@@ -395,11 +397,9 @@ like2.on("click", function () {
     playlistURL: link2.attr("href"),
     playlistTitle: pl2Title.text(),
   });
-  console.log(currentPlayListNum);
-  console.log(link2.attr("href"));
-  console.log(pl2Title.text());
+
   localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
-  console.log("push2");
+  fbck2.text("Playlist Saved!");
 });
 like3.on("click", function () {
   if (currentPlayListNum) {
@@ -410,11 +410,9 @@ like3.on("click", function () {
     playlistURL: link3.attr("href"),
     playlistTitle: pl3Title.text(),
   });
-  console.log(currentPlayListNum);
-  console.log(link3.attr("href"));
-  console.log(pl3Title.text());
-  console.log("push3");
+
   localStorage.setItem("savedPlay", JSON.stringify(savedPlaylists));
+  fbck3.text("Playlist Saved!");
 });
 
 cityButton.on("click", function (event) {

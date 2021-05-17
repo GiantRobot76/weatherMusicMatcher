@@ -13,13 +13,14 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+    <link rel="stylesheet" href="assets/css/alt.css" />
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
   </head>
   <body>
-    <div class="jumbotron">
+    <div class="jumbotron bg-warning border border-black">
       <h1 class="display-4 text-center">Weather-Music Mixer</h1>
       <p class="lead text-center">
         Customized Playlist Recommendations Based on Your Local Weather
@@ -27,7 +28,7 @@
     </div>
 
     <div class="row ml-3">
-      <div class="col-sm-3 text-center border border-black">
+      <div class="col-sm-3 text-center border border-black bg-light">
         <h2>Enter Your City</h2>
         <form>
           <div class="form-group">
@@ -39,56 +40,72 @@
             />
           </div>
 
-          <button type="submit" class="btn btn-primary" id="city-button">
+          <button type="submit" class="btn btn-primary mb-2" id="city-button">
             Search
           </button>
         </form>
       </div>
 
       <div
-        class="col-sm-8 text-center border border-black ml-3 weatherPopulate"
+        class="
+          col-sm-8
+          text-center
+          border border-black
+          ml-3
+          weatherPopulate
+          bg-light
+        "
       >
-        <h2 id="display-city-name">City Name<img id="new-icon-display" /></h2>
-        <p class="text-left">Temperature: <span id="temperature"></span></p>
-        <p class="text-left">Wind: <span id="wind"> MPH</span></p>
-        <p class="text-left">Humidity: <span id="humidity"> %</span></p>
+        <h2 id="display-city-name">City Name</h2>
+        <img id="new-icon-display" />
+        <p class="text-left bold">
+          Temperature: <span id="temperature"></span>
+        </p>
+        <p class="text-left bold">Wind: <span id="wind"> MPH</span></p>
+        <p class="text-left bold">Humidity: <span id="humidity"> %</span></p>
       </div>
     </div>
 
     <div class="row ml-3 mt-3 flex-row justify-content-center playlists">
-      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
         <h3 id="genre-title-1">Genre Title</h3>
-        <div class="wrap border border-black">
+        <div class="wrap border border-black bg-light">
           <p id="PL1-Title">Playlist Title Goes Here</p>
-          <img id="thumbnail1" />
-          <a href="#">Playlist Link</a>
+          <img class="thumbnail-format" id="thumbnail1" src="" />
+          <a id="link1" href="#">Playlist Link</a>
         </div>
-        <div>
-          Save This Playlist
+        <div class="mt-2">
+          <h4 id="feedback1">Save This Playlist</h4>
           <button id="button1" class="likeButtons">👍</button>
         </div>
       </div>
-      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
         <h3 id="genre-title-2">Genre Title</h3>
-        <div class="wrap border border-black">
+        <div class="wrap border border-black bg-light">
           <p id="PL2-Title">Playlist Title Goes Here</p>
-          <img id="thumbnail2" />
+          <img class="thumbnail-format" id="thumbnail2" src="" />
           <a id="link2" href="#">Playlist Link</a>
         </div>
-        <div>
-          Save This Playlist
+        <div class="mt-2">
+          <h4 id="feedback2">Save This Playlist</h4>
           <button id="button2" class="likeButtons">👍</button>
         </div>
       </div>
-      <div class="col-sm-2 border border-black ml-3 mt-3 text-center">
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
         <h3 id="genre-title-3">Genre Title</h3>
-        <div class="wrap border border-black">
+        <div class="wrap border border-black bg-light">
           <p id="PL3-Title">Playlist Title Goes Here</p>
-          <img id="thumbnail3" />
+          <img class="thumbnail-format" id="thumbnail3" src="" />
           <a id="link3" href="#">Playlist Link</a>
         </div>
-        <div>
-          Save This Playlist
+        <div class="mt-2">
+          <h4 id="feedback3">Save This Playlist</h4>
           <button id="button3" class="likeButtons">👍</button>
         </div>
       </div>
@@ -97,12 +114,9 @@
       class="row ml-3 mt-3 flex-row justify-content-center"
       id="saved-play-lists"
     >
-      <ul class="text-center mt-3" id="saved-list-target">
-        Saved Playlists Go Here
-        <li>Playlist1</li>
-        <li>Playlist2</li>
-        <li>Playlist3</li>
-        <li>Playlist4</li>
+      <ul class="text-center mt-3 fw-bold" id="saved-list-target">
+        <h3 class="fw-bold">Saved Playlists</h3>
+        <hr />
       </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
