@@ -4,156 +4,123 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- bootstrap -->
+    <title>Weather Music Matcher</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
     />
-    <!-- jQuery -->
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
-    <!-- moment -->
+    <link rel="stylesheet" href="assets/css/style.css" />
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     ></script>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Weather Music Matcher</title>
   </head>
-
   <body>
-    <!-- header... Jumbotron -->
-    <header class="grad1">
-      <h1>Weather Music Mixer</h1>
-    </header>
+    <div class="jumbotron bg-warning border border-black">
+      <h1 class="display-4 text-center">Weather-Music Mixer</h1>
+      <p class="lead text-center">
+        Customized Playlist Recommendations Based on Your Local Weather
+      </p>
+    </div>
 
-    <div class="row">
-      <!-- select your city input -->
-
-      <div class="inputCard col-sm-3">
-        <div class="row">
-          <div id="inputBox" class="input-group col-sm-10 mb-3">
-            <h2>Search for a City</h2>
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search for your city here"
-                aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
-                id="city-input"
-              />
-            </div>
-            <button
-              class="btn btn-outline-secondary"
-              type="button"
-              id="city-button"
-            >
-              Search
-            </button>
+    <div class="row ml-3">
+      <div class="col-sm-3 text-center border border-black bg-light">
+        <h2>Enter Your City</h2>
+        <form>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="city-input"
+              aria-describedby="cityInput"
+            />
           </div>
-          <p style="font-size: large;">Enter your city name to find a music playlist that fits the mood of your current weather!</p>
-        </div>
+
+          <button type="submit" class="btn btn-primary mb-2" id="city-button">
+            Search
+          </button>
+        </form>
       </div>
 
-      <!-- weather populate -->
-      <div class="weatherPopulate col-sm-8 d-flex">
-        <div class="col-3"></div>
-        <div class="row weatherPopulate">
-          <div class="col-md-8">
-            <div class = "d-flex flex-row">
-            <h2 id="display-city-name">Your City Name Here </h2>
-            <span id="icon"></span>
-            </div>
-            <img id="new-icon-display" />
-            <p id="date" style="font-size: medium">
-              Date Here
-            </p>
-            <div class="row" style="font-size: medium">
-              <div class="col-12">
-                <p class="spacing">Temp: <span id="temperature">°</span></p>
-              </div>
-            </div>
-            <div class="row" style="font-size: medium">
-              <div class="col-12">
-                <p class="spacing">Winds: <span id="wind"></span></p>
-              </div>
-            </div>
-            <div class="row" style="font-size: medium">
-              <div class="col-12">
-                <p class="spacing">Humidity: <span id="humidity"></span></p>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div
+        class="
+          col-sm-8
+          text-center
+          border border-black
+          ml-3
+          weatherPopulate
+          bg-light
+        "
+      >
+        <h2 id="display-city-name">City Name</h2>
+        <img id="new-icon-display" />
+        <p class="text-left bold">
+          Temperature: <span id="temperature"></span>
+        </p>
+        <p class="text-left bold">Wind: <span id="wind"> MPH</span></p>
+        <p class="text-left bold">Humidity: <span id="humidity"> %</span></p>
       </div>
     </div>
 
-    <!-- genre selector dropdown-->
-    <div class="genreSelector"></div>
-
-    <!-- generated playlists -->
-    <section class="d-flex justify-content-center">
-      <div class="playlists">
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title" id ="PL1-Title">Playlist Name</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-            <!-- <p class="card-text" >Thumbnail or something</p> -->
-            <img src="" id = "thumbnail1" class="tumbPic">
-            <a href="#" class="card-link" id="link1">Playlist link</a>
-          </div>
+    <div class="row ml-3 mt-3 flex-row justify-content-center playlists">
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
+        <h3 id="genre-title-1">Genre Title</h3>
+        <div class="wrap border border-black bg-light">
+          <p id="PL1-Title">Playlist Title Goes Here</p>
+          <img class="thumbnail-format" id="thumbnail1" src="" />
+          <a id="link1" href="#">Playlist Link</a>
         </div>
-        <div>
+        <div class="mt-2">
+          <h4 id="feedback1">Save This Playlist</h4>
           <button id="button1" class="likeButtons">👍</button>
         </div>
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title" id="PL2-Title">Playlist Name</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
-            <!-- <p class="card-text">Thumbnail or something</p> -->
-            <img src="" id = "thumbnail2" class="tumbPic">
-            <a href="#" class="card-link" id="link2">Playlist link</a>
-          </div>
+      </div>
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
+        <h3 id="genre-title-2">Genre Title</h3>
+        <div class="wrap border border-black bg-light">
+          <p id="PL2-Title">Playlist Title Goes Here</p>
+          <img class="thumbnail-format" id="thumbnail2" src="" />
+          <a id="link2" href="#">Playlist Link</a>
         </div>
-        <div>
+        <div class="mt-2">
+          <h4 id="feedback2">Save This Playlist</h4>
           <button id="button2" class="likeButtons">👍</button>
         </div>
-        <div class="card" style="width: 18rem">
-          <div class="card-body">
-            <h5 class="card-title" id="PL3-Title">Playlist Name</h5>
-            <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-            <p class="card-text">Thumbnail or something</p> -->
-            <img src="" id = "thumbnail3" class="tumbPic">
-            <a href="#" class="card-link" id="link3">Playlist link</a>
-          </div>
+      </div>
+      <div
+        class="col-sm-4 border border-black ml-3 mt-3 text-center bg-secondary"
+      >
+        <h3 id="genre-title-3">Genre Title</h3>
+        <div class="wrap border border-black bg-light">
+          <p id="PL3-Title">Playlist Title Goes Here</p>
+          <img class="thumbnail-format" id="thumbnail3" src="" />
+          <a id="link3" href="#">Playlist Link</a>
         </div>
-        <div>
+        <div class="mt-2">
+          <h4 id="feedback3">Save This Playlist</h4>
           <button id="button3" class="likeButtons">👍</button>
         </div>
       </div>
-    </section>
-
-    <!-- liked playlists -->
-    <section id="savedSection">
-      <h2>Listen to Your Favorite Playlists Again</h2>
-      <div id ="saved-play-lists"></div>
-        <ul id = "saved-list-target">
-          
-        </ul>
-      </div>
-    </section>
-
-    <!-- jQuery -->
+    </div>
+    <div
+      class="row ml-3 mt-3 flex-row justify-content-center"
+      id="saved-play-lists"
+    >
+      <ul class="text-center mt-3 fw-bold" id="saved-list-target">
+        <h3 class="fw-bold">Saved Playlists</h3>
+        <hr />
+      </ul>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- boostrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
