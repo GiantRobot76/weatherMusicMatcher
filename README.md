@@ -4,9 +4,9 @@ App provides suggested YouTube music playlists based on the current weather in t
 
 Collaborators and Roles on Initial Project:
 
-A. Mendoza (Concept, Music Genre Curation, HTML/CSS)
-A. Guc - HTML/CSS, Presentaion and Documentation
-D. Doerr - HTML/CSS, Presentation and Documentation
+A. Mendoza (Concept, Music Genre Curation, HTML/CSS),
+A. Guc - HTML/CSS, Presentaion and Documentation,
+D. Doerr - HTML/CSS, Presentation and Documentation,
 J. Bowman - JS/Jquery Implementation.
 
 Link to Updated Site: https://giantrobot76.github.io/weatherMusicMatcher/
