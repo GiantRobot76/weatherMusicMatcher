@@ -1,4 +1,4 @@
-Extensions to a team project I worked on earlier this year. I built the JS in the initial project, and have reworked the front end into an alternate design here, added some limited JS features, and done some cleanup on the initial code.
+Extensions to a team project I worked on earlier this year. I built the JS in the initial project, and have now reworked the front end into an alternate design, added some limited JS features, and done some cleanup on the initial code.
 
 App provides suggested YouTube music playlists based on the current weather in the city input by the user. It utilizes calls to the OpenWeatherMap and YouTube APIs to accomplish this. Recommendations are still based on the genre selections from music expert A. Mendoza established in the original project.
 
